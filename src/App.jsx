@@ -4,6 +4,8 @@ import VendingMachine from './VendingMachine'
 import Chips from './Chips'
 import Soda from './Soda'
 import Water from './Water'
+import Navbar from './Navbar'
+import Typography from '@mui/material/Typography'
 import './App.css'
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
@@ -12,11 +14,14 @@ function App() {
 
   return (
     <div className="App">
-      <header>
-        <h1>Vending Machine</h1>
-      </header>
-      <main>
-        <BrowserRouter>
+      <BrowserRouter>
+        <header>
+          <Navbar />
+          <Typography variant="h1" component="h1" sx={{ py: 5 }}>
+            Vending Machine
+          </Typography>
+        </header>
+        <main>
           <Switch>
             <Route exact path="/">
               <VendingMachine />
@@ -31,10 +36,10 @@ function App() {
               <Water />
             </Route>
           </Switch>
-        </BrowserRouter>
-      </main>
+        </main>
+      </BrowserRouter>
     </div>
-  )
+  );
 }
 
 export default App
